@@ -1,1 +1,8 @@
 @import '~antd/dist/antd.css';
+
+.ant-layout-header {
+  width: 100%;
+  background-color: rgb(29, 27, 27);
+  position: sticky;
+  top: 0;
+}

@@ -1,12 +1,32 @@
 import './App.css';
 import Layout from './layout';
-
-import { useTranslation } from 'react-i18next';
-
 import './language/i18n.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import GlobalStyle from './style/GlobalStyle';
+import { lazy, Suspense } from 'react';
+const Home = lazy(() => import('./views/Home'));
+const Loading = () => {
+  return <div>loading...</div>;
+};
+
+const NOTFUND = () => {
+  return <div>404</div>;
+};
+
 function App() {
-  const { t, i18n } = useTranslation();
-  return <Layout>{t('look.deep')}</Layout>;
+  return (
+    <Router>
+      <GlobalStyle />
+      <Layout>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="*" element={<NOTFUND />}></Route>
+          </Routes>
+        </Suspense>
+      </Layout>
+    </Router>
+  );
 }
 
 export default App;

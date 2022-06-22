@@ -10,7 +10,14 @@ import {
   setLanguage,
 } from '../../../features/language/languageSlice';
 
-const NavigationBarContainer = styled.div``;
+import { NavList } from './components';
+
+const NavigationBarContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const NavigationBar = () => {
   const { t, i18n } = useTranslation();
@@ -26,6 +33,7 @@ const NavigationBar = () => {
 
   return (
     <NavigationBarContainer>
+      <NavList />
       {t('key')}
       <Button onClick={changeLanguage}>{t('changeLanguage')}</Button>
     </NavigationBarContainer>

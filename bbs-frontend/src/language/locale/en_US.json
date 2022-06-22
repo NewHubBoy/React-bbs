@@ -3,5 +3,6 @@
   "look": {
     "deep": "value of look deep"
   },
-  "changeLanguage": "changeLanguage"
+  "changeLanguage": "changeLanguage",
+  "home": "Home"
 }
