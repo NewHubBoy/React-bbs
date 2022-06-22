@@ -4,5 +4,13 @@
     "deep": "value of look deep"
   },
   "changeLanguage": "changeLanguage",
-  "home": "Home"
+  "home": "Home",
+  "report": "Report",
+  "manufacturers": "Manufacturers",
+  "authorRanking": "Author Ranking",
+  "team": "Team",
+  "announcement": "Announcement",
+  "searchTips": "Search Something",
+  "login": "Login",
+  "register": "Register"
 }

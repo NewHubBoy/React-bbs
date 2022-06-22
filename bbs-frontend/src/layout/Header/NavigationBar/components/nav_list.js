@@ -1,12 +1,27 @@
 export default [
   {
-    name: 'Home',
-    tag: 'home',
-    link: '/',
+    name: 'Report',
+    tag: 'report',
+    link: '/report',
   },
   {
-    name: 'Home',
-    tag: 'home',
-    link: '/home',
+    name: 'Manufacturers',
+    tag: 'manufacturers',
+    link: '/manufacturers',
+  },
+  {
+    name: 'Author Ranking',
+    tag: 'authorRanking',
+    link: '/authorRanking',
+  },
+  {
+    name: 'Team',
+    tag: 'team',
+    link: '/team',
+  },
+  {
+    name: 'Announcement',
+    tag: 'announcement',
+    link: '/announcement',
   },
 ];

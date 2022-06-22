@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // import i18n from '../../../language/i18n';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from 'antd';
+import { Button, Space } from 'antd';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -10,7 +10,7 @@ import {
   setLanguage,
 } from '../../../features/language/languageSlice';
 
-import { NavList } from './components';
+import { NavList, SearchContainer, Logo, User } from './components';
 
 const NavigationBarContainer = styled.div`
   width: 100%;
@@ -33,9 +33,17 @@ const NavigationBar = () => {
 
   return (
     <NavigationBarContainer>
-      <NavList />
-      {t('key')}
-      <Button onClick={changeLanguage}>{t('changeLanguage')}</Button>
+      <Space direction="horizontal" align="center" size={'middle'}>
+        <Logo />
+        <NavList />
+        <SearchContainer />
+      </Space>
+      <Space direction="horizontal" align="center" size={'middle'}>
+        <Button onClick={changeLanguage} size="small">
+          {t('changeLanguage')}
+        </Button>
+        <User />
+      </Space>
     </NavigationBarContainer>
   );
 };

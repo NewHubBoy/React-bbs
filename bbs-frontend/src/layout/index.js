@@ -2,6 +2,8 @@ import { Layout } from 'antd';
 import Top from './Header';
 import PageContainer from '../components/PageContainer';
 
+import FooterContent from './Footer';
+
 const { Header, Content, Footer } = Layout;
 
 const LayoutComponent = ({ children }) => {
@@ -13,7 +15,9 @@ const LayoutComponent = ({ children }) => {
       <Content>
         <PageContainer>{children}</PageContainer>
       </Content>
-      <Footer></Footer>
+      <Footer>
+        <FooterContent />
+      </Footer>
     </Layout>
   );
 };
