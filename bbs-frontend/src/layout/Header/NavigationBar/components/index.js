@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Input, Button, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import nav_list from './nav_list';
+import { useEffect, useRef, useState } from 'react';
 
 const { Search } = Input;
 
@@ -81,8 +82,18 @@ const Login = () => {
 };
 
 const Register = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
-  return <Button size="small">{t('register')}</Button>;
+  return (
+    <Button
+      size="small"
+      onClick={() => {
+        navigate('/register', { replace: true });
+      }}
+    >
+      {t('register')}
+    </Button>
+  );
 };
 
 const User = () => {
@@ -96,13 +107,34 @@ const User = () => {
 
 const SearchContainer = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const _Search = useRef(null);
+  const [value, setValue] = useState('');
+
   const onSearch = (value) => {
     console.log(value);
+    navigate(`/search?keyword=${value}`);
   };
+
+  const hanldChange = () => {
+    setValue(_Search.current.input.value);
+  };
+
+  useEffect(() => {
+    console.log(location);
+    if (location.pathname != '/search') {
+      setValue('');
+    }
+    return;
+  }, [location]);
   return (
     <Search
+      ref={_Search}
       placeholder={t('searchTips')}
       onSearch={onSearch}
+      value={value}
+      onChange={hanldChange}
       style={{
         width: 240,
       }}

@@ -3,13 +3,14 @@
   "look": {
     "deep": "深层遍历"
   },
-  "changeLanguage": "切换语言",
+  "changeLanguage": "English",
   "home": "首页",
   "report": "报告",
   "manufacturers": "厂商",
   "authorRanking": "作者排名",
   "team": "团队",
   "announcement": "公告",
+  "search": "搜索",
   "searchTips": "搜索",
   "login": "登录",
   "register": "注册"
