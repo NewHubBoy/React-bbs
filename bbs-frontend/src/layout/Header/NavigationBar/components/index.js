@@ -113,7 +113,6 @@ const SearchContainer = () => {
   const [value, setValue] = useState('');
 
   const onSearch = (value) => {
-    console.log(value);
     navigate(`/search?keyword=${value}`);
   };
 
@@ -122,11 +121,9 @@ const SearchContainer = () => {
   };
 
   useEffect(() => {
-    console.log(location);
     if (location.pathname != '/search') {
-      setValue('');
+      return setValue('');
     }
-    return;
   }, [location]);
   return (
     <Search

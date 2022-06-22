@@ -10,6 +10,8 @@ import zhCN from 'antd/lib/locale/zh_CN';
 import store from './store/index.js';
 import { Provider } from 'react-redux';
 
+import './mock/index.js';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

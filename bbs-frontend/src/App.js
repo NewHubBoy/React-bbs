@@ -19,7 +19,7 @@ const Register = lazy(() => import('./views/Register'));
 const Search = lazy(() => import('./views/Search'));
 
 // loading components
-const Loading = () => {
+export const Loading = () => {
   return <PageContent>loading...</PageContent>;
 };
 

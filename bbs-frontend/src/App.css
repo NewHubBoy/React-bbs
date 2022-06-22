@@ -5,9 +5,31 @@
   background-color: rgb(29, 27, 27);
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 
 .ant-space-item {
   display: flex;
   align-items: center;
+}
+
+.ant-layout-footer {
+  background-color: rgb(29, 27, 27);
+}
+
+.common-table-author,
+.common-table-lv,
+.common-table-cell-date {
+  min-width: 70px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.common-table-title > a {
+  color: #40a9ff;
+}
+.common-table-title > a:hover {
+  color: #074279;
+}
+.common-table-cell-date {
+  min-width: 100px;
 }

@@ -13,5 +13,16 @@
   "search": "搜索",
   "searchTips": "搜索",
   "login": "登录",
-  "register": "注册"
+  "register": "注册",
+  "commonTitle": {
+    "commit": "最新提交",
+    "confirm": "最新确认",
+    "public": "最新公开"
+  },
+  "CommonTable": {
+    "title": "报告标题",
+    "lv": "等级",
+    "author": "作者",
+    "date": "日期"
+  }
 }

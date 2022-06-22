@@ -13,5 +13,16 @@
   "search": "Search",
   "searchTips": "Search Something",
   "login": "Login",
-  "register": "Register"
+  "register": "Register",
+  "commonTitle": {
+    "commit": "Latest Commit",
+    "confirm": "latest confirmation",
+    "public": "Latest Public"
+  },
+  "CommonTable": {
+    "title": "Report Title",
+    "lv": "Level",
+    "author": "Author",
+    "date": "Date"
+  }
 }
