@@ -39,9 +39,20 @@
   },
   "ReportDetail": {
     "abstract ": "Abstract",
-    "lv": "Level",
-    "author": "Author",
-    "date": "Date",
-    "content": "Content"
+    "abstractInfo": {
+      "_id": "Report Number",
+      "title": "Report Title",
+      "manufacturer": "Related Manufacturers",
+      "author": "Report Author",
+      "date": "Submission time",
+      "origin": "Report Source",
+      "params": "Report Properties",
+      "classfication": "Report Category",
+      "lv": "Report Level",
+      "score": "Self-assessment score"
+    },
+    "status": "Status",
+    "description": "Description",
+    "comment": "Comment"
   }
 }

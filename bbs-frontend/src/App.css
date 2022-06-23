@@ -47,3 +47,16 @@
   border-bottom: 1px solid #f0f0f0;
   font-size: 16px;
 }
+.report-timeline {
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.report-timeline .ant-timeline-item-content > div {
+  display: grid;
+  grid-template-columns: 120px auto;
+}
+
+.report-timeline .ant-timeline-item-last > .ant-timeline-item-content {
+  min-height: unset;
+}

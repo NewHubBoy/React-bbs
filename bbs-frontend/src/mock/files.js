@@ -88,9 +88,7 @@ export default [
               status: Random.integer(1, 3),
             },
           ],
-          description: {
-            description: Random.ctitle(5, 200),
-          },
+          description: Random.ctitle(100, 200),
         },
       };
     },

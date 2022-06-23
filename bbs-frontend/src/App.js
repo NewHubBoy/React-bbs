@@ -6,6 +6,11 @@ import PageContent from './components/PageContent';
 import GlobalStyle from './style/GlobalStyle';
 import { lazy, Suspense } from 'react';
 import { Spin } from 'antd';
+import { ConfigProvider } from 'antd';
+import enUS from 'antd/lib/locale/en_US';
+import zhCN from 'antd/lib/locale/zh_CN';
+import { useSelector } from 'react-redux';
+import { currentLanguage } from './features/language/languageSlice';
 // import pages
 const Home = lazy(() => import('./views/Home'));
 const Report = lazy(() => import('./views/Report'));
@@ -35,27 +40,33 @@ const NOTFUND = () => {
 };
 
 function App() {
+  const locale = useSelector(currentLanguage);
   return (
-    <Router>
-      <GlobalStyle />
-      <Layout>
-        <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/report" element={<Report />}></Route>
-            <Route path="/report/detail/:id" element={<ReportDetail />}></Route>
-            <Route path="/manufacturers" element={<Manufacturers />}></Route>
-            <Route path="/team" element={<Team />}></Route>
-            <Route path="/authorRanking" element={<Author />}></Route>
-            <Route path="/announcement" element={<Announcement />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/search" element={<Search />}></Route>
-            <Route path="*" element={<NOTFUND />}></Route>
-          </Routes>
-        </Suspense>
-      </Layout>
-    </Router>
+    <ConfigProvider locale={locale == 'zh' ? zhCN : enUS}>
+      <Router>
+        <GlobalStyle />
+        <Layout>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/report" element={<Report />}></Route>
+              <Route
+                path="/report/detail/:id"
+                element={<ReportDetail />}
+              ></Route>
+              <Route path="/manufacturers" element={<Manufacturers />}></Route>
+              <Route path="/team" element={<Team />}></Route>
+              <Route path="/authorRanking" element={<Author />}></Route>
+              <Route path="/announcement" element={<Announcement />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/register" element={<Register />}></Route>
+              <Route path="/search" element={<Search />}></Route>
+              <Route path="*" element={<NOTFUND />}></Route>
+            </Routes>
+          </Suspense>
+        </Layout>
+      </Router>
+    </ConfigProvider>
   );
 }
 

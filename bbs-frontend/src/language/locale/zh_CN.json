@@ -39,9 +39,20 @@
   },
   "ReportDetail": {
     "abstract ": "报告摘要",
-    "lv": "等级",
-    "author": "作者",
-    "date": "日期",
-    "content": "报告内容"
+    "abstractInfo": {
+      "_id": "报告编号",
+      "title": "报告标题",
+      "manufacturer": "相关厂商",
+      "author": "报告作者",
+      "date": "报告时间",
+      "origin": "报告来源",
+      "params": "报告属性",
+      "classfication": "报告类别",
+      "lv": "报告等级",
+      "score": "自评得分"
+    },
+    "status": "报告状态",
+    "description": "报告描述",
+    "comment": "报告评论"
   }
 }
