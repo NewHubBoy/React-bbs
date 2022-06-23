@@ -14,6 +14,18 @@
   "searchTips": "Search Something",
   "login": "Login",
   "register": "Register",
+  "breadcrumb": {
+    "home": "Home",
+    "report": "All Report",
+    "detail": "Detail",
+    "manufacturers": "Manufacturers",
+    "authorRanking": "Author Ranking",
+    "team": "Team",
+    "announcement": "Announcement",
+    "search": "Search",
+    "login": "Login",
+    "register": "Register"
+  },
   "commonTitle": {
     "commit": "Latest Commit",
     "confirm": "latest confirmation",
@@ -24,5 +36,12 @@
     "lv": "Level",
     "author": "Author",
     "date": "Date"
+  },
+  "ReportDetail": {
+    "abstract ": "Abstract",
+    "lv": "Level",
+    "author": "Author",
+    "date": "Date",
+    "content": "Content"
   }
 }

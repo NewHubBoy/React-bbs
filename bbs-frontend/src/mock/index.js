@@ -9,5 +9,5 @@ Mock.setup({
 });
 
 for (const mock of mocks) {
-  Mock.mock(mock.url, mock.type, mock.response);
+  Mock.mock(RegExp(mock.url + '.*?'), mock.type, mock.response);
 }

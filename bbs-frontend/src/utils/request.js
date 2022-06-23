@@ -5,6 +5,8 @@ import { message } from 'antd';
 const service = axios.create({
   timeout: 5000,
 });
+service.defaults.headers.post['Content-Type'] =
+  'application/x-www-form-urlencoded;charset=UTF-8';
 
 service.interceptors.request.use(
   (config) => {

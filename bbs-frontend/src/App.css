@@ -17,6 +17,14 @@
   background-color: rgb(29, 27, 27);
 }
 
+.common-table .ant-table-thead > tr > th {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 2px solid #e8e8e8;
+}
+
 .common-table-author,
 .common-table-lv,
 .common-table-cell-date {
@@ -32,4 +40,10 @@
 }
 .common-table-cell-date {
   min-width: 100px;
+}
+
+.ant-breadcrumb ol {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 16px;
 }

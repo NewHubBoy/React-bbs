@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PageContent from '../../components/PageContent';
 import AnnouncenentCard from './components/AnnouncenentCard';
-import CommonTable from './components/CommonTable';
+import CommonTable from '../../components/ReportTable';
 import { Fragment, useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
@@ -13,15 +13,15 @@ const Home = () => {
   const { t, i18n } = useTranslation();
 
   const [tableData, setTableData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const { data } = await GetTable();
-        console.log(data);
+        const { data, total, currentPage, preSize } = await GetTable();
+        console.log(data, total, currentPage, preSize);
         for (let i = 0; i < data.length; i++) {
           data[i].key = i;
         }
@@ -42,16 +42,19 @@ const Home = () => {
           data={tableData}
           loading={loading}
           title={t('commonTitle.commit')}
+          pagination={false}
         />
         <CommonTable
           data={tableData}
           loading={loading}
           title={t('commonTitle.confirm')}
+          pagination={false}
         />
         <CommonTable
           data={tableData}
           loading={loading}
           title={t('commonTitle.public')}
+          pagination={false}
         />
       </PageContent>
       <AnnouncenentCard>{t('announcement')}</AnnouncenentCard>

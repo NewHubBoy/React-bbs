@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageContent from './components/PageContent';
 import GlobalStyle from './style/GlobalStyle';
 import { lazy, Suspense } from 'react';
+import { Spin } from 'antd';
 // import pages
 const Home = lazy(() => import('./views/Home'));
 const Report = lazy(() => import('./views/Report'));
@@ -14,18 +15,23 @@ const Author = lazy(() => import('./views/Author'));
 const Announcement = lazy(() => import('./views/Announcement'));
 const Login = lazy(() => import('./views/Login'));
 const Register = lazy(() => import('./views/Register'));
+const ReportDetail = lazy(() => import('./views/Report/detail'));
 
 // search
 const Search = lazy(() => import('./views/Search'));
 
 // loading components
 export const Loading = () => {
-  return <PageContent>loading...</PageContent>;
+  return (
+    <PageContent>
+      <Spin delay={1000} />
+    </PageContent>
+  );
 };
 
 // default route
 const NOTFUND = () => {
-  return <div>404</div>;
+  return <div>404 NOT FOUND</div>;
 };
 
 function App() {
@@ -37,6 +43,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/report" element={<Report />}></Route>
+            <Route path="/report/detail/:id" element={<ReportDetail />}></Route>
             <Route path="/manufacturers" element={<Manufacturers />}></Route>
             <Route path="/team" element={<Team />}></Route>
             <Route path="/authorRanking" element={<Author />}></Route>
